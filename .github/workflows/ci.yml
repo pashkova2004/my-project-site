@@ -1,23 +1,24 @@
 name: Проверка проекта
 
 on: 
-   push:
+  push:
       branches: [ main ]
+      
 jobs:
-  check:
+   check:
      runs-on: ubuntu-latest
      
      steps:
-        - name: Получить код
+      - name: Получить код
         uses: actions/checkout@v4
         
-        - name: Проверить наличие файлов
+      - name: Проверить наличие файлов
         run: |
-        echo "Проверяем файлы проекта..."
-        ls - la
-        echo "файл index. html:"
-        test -f index.html && echo "Найден!" || echo "НЕ НАЙДЕН! "
+          echo "Проверяем файлы проекта..."
+          ls - la
+          echo "файл index. html:"
+          test -f index.html && echo "Найден!" || echo "НЕ НАЙДЕН! "
         
-- name: Проверить README
-run: |
-test -f README.md && echo "README найден!" || echo "README НЕ НАЙДЕН!"
+      - name: Проверить README
+        run: |
+         test -f README.md && echo "README найден!" || echo "README НЕ НАЙДЕН!"
