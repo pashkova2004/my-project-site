@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "Проверяем файлы проекта..."
           ls - la
-          echo "файл index. html:"
+          echo "файл index.html:"
           test -f index.html && echo "Найден!" || echo "НЕ НАЙДЕН! "
         
       - name: Проверить README
